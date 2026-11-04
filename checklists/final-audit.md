@@ -42,6 +42,17 @@
 - [ ] The next chapter used the memory records instead of repeating full context.
 - [ ] No full chapter or source file was duplicated in memory.
 
+## File persistence
+
+- [ ] The active project root is known.
+- [ ] `outline.md` exists when an outline was requested.
+- [ ] Every requested chapter exists under `chapters/`.
+- [ ] Requested visuals exist under `visuals/`.
+- [ ] Audit records exist under `audits/`.
+- [ ] Each saved file was read back successfully.
+- [ ] Exact saved paths were reported to the user.
+- [ ] No artifact was presented as saved when it existed only in chat.
+
 ## Status
 
 ```text
@@ -49,6 +60,7 @@ claim_additions: 0
 claim_drops: 0
 unsupported_visual_claims: 0
 memory_repetition: 0
+missing_saved_files: 0
 writing_flags: N
 status: PASS | PASS_WITH_FLAGS | FAIL
 ```

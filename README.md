@@ -24,6 +24,22 @@ The skill is designed for Agent Skills-compatible hosts, including Claude Code, 
 4. **Indonesian output** — operational instructions are in English for cross-model compatibility; generated e-book content remains in Bahasa Indonesia unless the user requests another language.
 5. **Explicit uncertainty** — flag suspicious or unavailable information. Never silently repair it with model knowledge.
 
+## File persistence
+
+Chat output is not the project deliverable. The skill must write requested artifacts to the active e-book project directory before reporting completion.
+
+Minimum rules:
+
+- write the approved outline to `outline.md`;
+- write each chapter to `chapters/NN-title.md`;
+- write diagrams and SVG assets to `visuals/`;
+- write audits to `audits/`;
+- update `project-memory.md`, `chapter-ledger.md`, and `decision-log.md`;
+- read each new file back and verify non-empty content;
+- report exact saved paths.
+
+If the host cannot write files, report a persistence failure. Do not claim that chat-only content was saved.
+
 ## Project choices
 
 ### Writing styles

@@ -12,6 +12,25 @@ Create complete, evidence-grounded e-books in Bahasa Indonesia. The skill has tw
 
 The default deliverable is Markdown. Use Mermaid for diagrams and standalone SVG for illustrations. Never invent facts, sources, quotations, numbers, names, dates, research findings, testimonials, or story details that the source or brief does not provide.
 
+## Mandatory file persistence
+
+Chat output is not the project deliverable. Every approved outline, chapter draft, audit, decision, and visual must be written to the active e-book project directory before reporting completion.
+
+Persistence rules:
+
+- choose or create one project directory before drafting;
+- use the project directory as the root for all e-book files;
+- create required directories before writing: `chapters/`, `visuals/`, and `audits/`;
+- write the outline to `outline.md` before showing it to the user;
+- write chapter `N` to `chapters/NN-title.md` before replying with the chapter;
+- write Mermaid content to `visuals/diagrams.md` and SVG files to `visuals/`;
+- write audit results to `audits/`;
+- update `project-memory.md`, `chapter-ledger.md`, and `decision-log.md` after each draft;
+- read each newly written file back and verify its path and non-empty content;
+- report the exact saved paths in the response.
+
+Never claim a chapter is saved when it exists only in chat. If the host cannot write files, state that persistence failed and do not present the chat response as a completed saved chapter.
+
 ## Language contract
 
 Write operational instructions in English so any compatible model can follow them. The e-book, outline, user-facing questions, audits, and generated content must be in Bahasa Indonesia unless the user explicitly requests another language.
@@ -114,7 +133,7 @@ After conversion:
 4. Label claims `VERIFIED`, `SOURCE-RELATIVE`, `UNVERIFIED`, or `CONFLICT`.
 5. Create or update `project-memory.md` with stable facts and evidence pointers.
 6. Build the outline from the source, not from model knowledge.
-7. Show the outline and wait for approval.
+7. Write `outline.md`, verify it, then show the outline and wait for approval.
 
 ## BRIEF path: outline
 
@@ -165,6 +184,7 @@ When the user selects a chapter:
 9. End with a useful transition or unresolved question, not an automatic summary.
 10. Run the chapter audit before delivery.
 11. Update `chapter-ledger.md`, `decision-log.md`, and `project-memory.md`.
+12. Read back the chapter and updated memory files. Report their exact paths.
 
 Adapt emphasis to the purpose:
 
@@ -228,6 +248,19 @@ ebook/
 ```
 
 If the user requests only an outline or one chapter, deliver only that scope.
+
+The minimum saved scope is:
+
+```text
+<project-root>/
+├── outline.md
+├── chapters/
+│   └── NN-title.md
+├── visuals/
+└── audits/
+```
+
+For a complete project, also save `project-memory.md`, `chapter-ledger.md`, and `decision-log.md` at project root.
 
 ## Release packages
 

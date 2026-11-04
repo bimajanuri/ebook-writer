@@ -2,6 +2,8 @@
 
 Use compact project memory so later chapter requests do not require the user or model to repeat the full brief, source inventory, or previous decisions.
 
+Project memory files belong to the active e-book project directory, not only to the installed skill package.
+
 ## Required memory files
 
 For a complete project, create:
@@ -67,6 +69,7 @@ After drafting or revising:
 3. Update the current chapter and next action.
 4. Record unresolved questions once.
 5. Avoid copying prose, source documents, or repeated instructions into memory.
+6. Read the updated files back and verify that the writes succeeded.
 
 ## Token-saving rules
 

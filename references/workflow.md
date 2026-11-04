@@ -10,19 +10,23 @@ For `SOURCE`, convert files and create the manifest and evidence map. For `BRIEF
 
 ## Stage 2 — Outline
 
-Create a 5-15 chapter outline. Each chapter must have a distinct function. Show the outline and wait for approval.
+Create a 5-15 chapter outline. Each chapter must have a distinct function. Write and verify `outline.md` first. Then show the outline and wait for approval.
 
 ## Stage 3 — Draft
 
-Write only the selected chapter. Keep terminology, characters, timeline, point of view, and certainty consistent. Record new decisions in the project memory files.
+Write only the selected chapter. Keep terminology, characters, timeline, point of view, and certainty consistent. Save it as `chapters/NN-title.md`, read it back, and report the exact path. Record new decisions in the project memory files.
 
 ## Stage 4 — Visuals
 
 Choose visuals that improve understanding. Use Mermaid for structure or process. Use SVG for standalone illustrations. Never turn unsupported information into a data chart.
 
+Save Mermaid diagrams in `visuals/diagrams.md` and SVG assets in `visuals/`. Verify every saved visual.
+
 ## Stage 5 — Audit
 
 Run anti-hallucination, anti-slop, Indonesian writing, style, structure, visual, and memory audits. Status: `PASS`, `PASS_WITH_FLAGS`, or `FAIL`.
+
+Save audit records in `audits/` before reporting completion.
 
 ## Stage 6 — Revision
 
@@ -37,3 +41,15 @@ After each approved chapter, update only the compact memory records:
 - `decision-log.md` for decisions, assumptions, and unresolved questions.
 
 Do not copy full chapters into memory files.
+
+## Stage 8 — Persistence gate
+
+Before delivery:
+
+1. confirm the project root;
+2. confirm required directories exist;
+3. write all requested artifacts;
+4. read each artifact back;
+5. confirm non-empty content;
+6. report exact paths;
+7. stop with an explicit failure if any write or read-back check fails.
