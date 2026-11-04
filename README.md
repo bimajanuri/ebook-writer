@@ -57,7 +57,11 @@ ebook-writer/
 ├── chapter-ledger.md
 ├── decision-log.md
 ├── scripts/
+│   ├── build_release.py
 │   └── convert_folder.py
+├── .github/
+│   └── workflows/
+│       └── release.yml
 ├── protocols/
 │   ├── academic-mode.md
 │   ├── anti-hallucination.md
@@ -129,6 +133,34 @@ zip -r -X ebook-writer.zip . \
 Do not upload GitHub's raw `Code -> Download ZIP` archive when the host requires `SKILL.md` at the root. GitHub wraps that archive in a repository subdirectory.
 
 Upload the clean ZIP through the host's Skills interface, then enable the skill. Availability and upload permissions depend on the host plan and current product support.
+
+## GitHub Releases
+
+Push a version tag to build and publish two validated upload packages:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+The workflow publishes:
+
+- `ebook-writer-gemini.zip` — compact two-file package for Gemini Apps. It keeps `SKILL.md` at the archive root and stays below the documented 100 MB Gemini upload limit.
+- `ebook-writer-chatgpt.zip` — compact two-file package for ChatGPT Skills. It keeps `SKILL.md` at the archive root and stays below the documented 512 MB per-file upload limit.
+
+Both packages contain only UTF-8 text files, no hidden metadata, no binaries, no `.git` directory, and no nested repository folder. `supporting-materials.md` bundles the referenced protocols and templates so the small-file package remains self-contained.
+
+Download from the repository's **Releases** page. Do not use GitHub's raw `Code -> Download ZIP` archive for skill upload because it adds a repository subdirectory.
+
+### Package validation
+
+The release workflow runs:
+
+```bash
+python3 scripts/build_release.py
+```
+
+It checks archive size, file count, root-level `SKILL.md`, required frontmatter, UTF-8 text-only contents, hidden-path exclusion, and the generated `SKILL.md` line count. There is no published universal line-count limit for Gemini or ChatGPT Skills; line count is reported for reproducibility, not treated as an undocumented platform rule.
 
 ## Typical workflow
 

@@ -229,6 +229,15 @@ ebook/
 
 If the user requests only an outline or one chapter, deliver only that scope.
 
+## Release packages
+
+For Gemini Apps or ChatGPT Skills uploads, use the validated ZIP assets from the GitHub Releases page:
+
+- `ebook-writer-gemini.zip`
+- `ebook-writer-chatgpt.zip`
+
+These packages keep `SKILL.md` at the archive root and bundle supporting Markdown into `supporting-materials.md` to reduce file count. Do not use the raw GitHub source ZIP because it adds a repository subdirectory.
+
 ## Hard rules
 
 - Default output language is Bahasa Indonesia.
