@@ -1,186 +1,205 @@
 ---
 name: ebook-writer
-description: Membuat e-book berbahasa Indonesia dari materi lokal atau brief pengguna. Gunakan saat pengguna ingin mengonversi folder dokumen menjadi Markdown, membuat judul dan cerita singkat, memilih 5-15 bab, mengunci gaya dan tujuan, menyusun outline untuk persetujuan, menulis bab bertahap, serta menghasilkan diagram Mermaid, ilustrasi SVG, dan audit anti-halusinasi, anti-AI-slop, EYD, Humanize Writing, dan Academic Writing.
+description: Creates Indonesian-language e-books from a local source folder or a user brief. Use when the user wants folder-to-Markdown conversion with Microsoft MarkItDown, a title and short story, 5-15 chapters, one of three writing styles, one of six e-book purposes, an approved outline, chapter-by-chapter drafting, Mermaid diagrams, SVG illustrations, and anti-hallucination, anti-slop, Indonesian writing, and academic-quality audits.
 ---
 
 # Ebook Writer
 
-Skill penulisan e-book Bahasa Indonesia yang bekerja dalam dua jalur:
+Create complete, evidence-grounded e-books in Bahasa Indonesia. The skill has two entry paths:
 
-1. **MATERI** — baca folder lokal, konversi file ke Markdown memakai Microsoft MarkItDown, lalu tulis e-book dari sumber tersebut.
-2. **BRIEF** — terima judul, cerita singkat, jumlah bab, gaya bahasa, tujuan, dan pembaca; susun outline sebelum menulis.
+1. **SOURCE** — read a local folder, convert supported files to Markdown with Microsoft MarkItDown, map evidence, and write from the source.
+2. **BRIEF** — collect a title, short story or premise, chapter count, style, purpose, audience, and constraints; propose an outline before drafting.
 
-Output utama berupa Markdown. Diagram teknis memakai Mermaid. Gambar atau ilustrasi memakai SVG mandiri. Jangan mengarang fakta, sumber, kutipan, angka, atau detail cerita yang tidak diberikan.
+The default deliverable is Markdown. Use Mermaid for diagrams and standalone SVG for illustrations. Never invent facts, sources, quotations, numbers, names, dates, research findings, testimonials, or story details that the source or brief does not provide.
 
-## Router dan pertanyaan wajib
+## Language contract
 
-Tentukan jalur dari permintaan pengguna. Jika tidak jelas, tanyakan satu pilihan: `MATERI` atau `BRIEF`.
+Write operational instructions in English so any compatible model can follow them. The e-book, outline, user-facing questions, audits, and generated content must be in Bahasa Indonesia unless the user explicitly requests another language.
 
-### Jalur MATERI
+## Router and required intake
 
-Minta:
+Choose the entry path from the request. If unclear, ask the user to choose `SOURCE` or `BRIEF`.
 
-- path folder sumber;
-- target pembaca;
-- tujuan e-book;
-- gaya bahasa;
-- jumlah bab, 5–15;
-- apakah gambar/diagram diperlukan.
+### SOURCE path
 
-Tujuan e-book harus satu dari:
+Collect:
 
-1. `Dijual`
+- local source-folder path;
+- target audience;
+- one e-book purpose from the approved list;
+- one writing style from the approved list;
+- chapter count from 5 to 15;
+- whether diagrams or illustrations are needed;
+- genre or content boundaries, when relevant.
+
+If the chapter count is missing, recommend a count based on source density and ask for confirmation.
+
+### BRIEF path
+
+Collect:
+
+- working title;
+- short story, premise, or central argument;
+- chapter count from 5 to 15;
+- one approved writing style;
+- one approved e-book purpose;
+- target audience;
+- genre, when relevant;
+- content boundaries and sensitivities, when relevant.
+
+Do not draft chapters before the user approves the outline. The user may choose which chapter to write first.
+
+## Approved project choices
+
+Use exactly one writing style:
+
+1. `Educational` — clear, progressive, concrete, and application-oriented.
+2. `Casual` — warm, natural, direct, and conversational without forced slang.
+3. `Formal` — standard, structured, official, and free of unnecessary filler.
+
+Use exactly one e-book purpose:
+
+1. `For sale`
 2. `Lead magnet/bonus`
 3. `Personal branding`
-4. `Materi kelas`
-5. `Panduan internal tim`
-6. `Koleksi pribadi`
+4. `Course material`
+5. `Internal team guide`
+6. `Personal collection`
 
-Jika pengguna belum memberi jumlah bab, sarankan angka berdasarkan kepadatan materi, tetapi minta konfirmasi.
+If the user uses Indonesian labels, map them to the choices above. Do not introduce additional style or purpose presets.
 
-### Jalur BRIEF
+## Mandatory load order
 
-Minta:
+1. Read this file.
+2. Read `references/workflow.md`.
+3. Read `protocols/anti-hallucination.md`, `protocols/anti-slop.md`, `protocols/citations.md`, `protocols/evaluation.md`, `protocols/guardrails.md`, `protocols/humanizer-id.md`, `protocols/paraphrase.md`, `protocols/patterns.md`, `protocols/indonesian-writing.md`, and `protocols/visuals.md`.
+4. Read `references/style-presets.md`.
+5. Read `references/ai-lexicon-id.md`, `references/citation-styles.md`, and `references/evaluation-rubric.md` when auditing, citing, or evaluating.
+6. For non-fiction or academic e-books, read `protocols/academic-mode.md`.
+7. Before delivery, read `checklists/final-audit.md`.
 
-- judul sementara;
-- cerita singkat atau premis;
-- jumlah bab, 5–15;
-- gaya bahasa;
-- tujuan e-book;
-- target pembaca;
-- genre, jika relevan;
-- batasan konten, jika ada.
+Do not load or apply English grammar protocols from another skill. The repository intentionally keeps grammar guidance local and excludes English-language reference files.
 
-Tujuan e-book harus satu dari enam pilihan yang ditetapkan pada jalur MATERI.
+## SOURCE path: folder conversion
 
-Jangan menulis bab sebelum pengguna menyetujui outline. Pengguna boleh memilih bab mana yang dikerjakan lebih dulu.
+Run:
 
-## Load order
+```bash
+python scripts/convert_folder.py --install-missing /path/to/source-folder
+```
 
-1. Baca file ini.
-2. Baca `references/workflow.md`.
-3. Baca `protocols/anti-hallucination.md`, `protocols/anti-slop.md`, `protocols/citations.md`, `protocols/evaluation.md`, `protocols/guardrails.md`, `protocols/humanizer-id.md`, `protocols/paraphrase.md`, `protocols/patterns.md`, `protocols/indonesian-writing.md`, dan `protocols/visuals.md`.
-4. Baca `references/style-presets.md` untuk memilih gaya.
-5. Baca `references/ai-lexicon-id.md`, `references/citation-styles.md`, dan `references/evaluation-rubric.md` saat audit, sitasi, atau evaluasi diperlukan.
-6. Untuk e-book nonfiksi atau akademik, baca `protocols/academic-mode.md`.
-7. Sebelum mengirim hasil, baca `checklists/final-audit.md`.
+The converter must:
 
-## Jalur MATERI: konversi folder
+- validate that the source is a readable directory;
+- skip `.git`, `.DS_Store`, `__MACOSX`, virtual environments, caches, temporary files, and the output directory;
+- preserve relative source names and deterministic ordering;
+- write one Markdown file per input file into `converted/`;
+- create `source-manifest.md` with source path, output path, status, and errors;
+- never delete or overwrite source files;
+- report every conversion failure.
 
-Gunakan `scripts/convert_folder.py --install-missing`.
-
-Perilaku wajib:
-
-- validasi bahwa path berada pada folder yang dapat dibaca;
-- abaikan `.git`, `.DS_Store`, `__MACOSX`, file sementara, dan output folder;
-- pertahankan nama file dan urutan sumber;
-- tulis satu `.md` per file ke folder kerja `converted/`;
-- buat `source-manifest.md` berisi path relatif, tipe file, status, dan error;
-- jangan menghapus atau menimpa file sumber;
-- laporkan file yang gagal dikonversi.
-
-Dependensi MarkItDown:
+Microsoft MarkItDown installation:
 
 ```bash
 python -m pip install 'markitdown[all]'
 ```
 
-Pasang hanya jika import atau perintah `markitdown` tidak tersedia. Gunakan virtual environment bila memungkinkan. Jangan memasang plugin pihak ketiga tanpa persetujuan.
+Install only when the import or command is unavailable. Prefer a virtual environment. Do not install third-party plugins without user approval.
 
-Setelah konversi:
+After conversion:
 
-1. baca semua Markdown hasil konversi;
-2. pisahkan fakta, opini, kutipan, instruksi, data, dan bagian tidak terbaca;
-3. buat `evidence-map.md` dengan provenance `file:heading` atau `file:page` bila tersedia;
-4. tandai klaim `VERIFIED`, `SOURCE-RELATIVE`, `UNVERIFIED`, atau `CONFLICT`;
-5. susun outline berdasarkan materi, bukan pengetahuan model;
-6. minta persetujuan outline.
+1. Read every converted Markdown file.
+2. Separate facts, opinions, quotations, instructions, data, and unreadable sections.
+3. Create `evidence-map.md` with provenance such as `file:heading` or `file:page`.
+4. Label claims `VERIFIED`, `SOURCE-RELATIVE`, `UNVERIFIED`, or `CONFLICT`.
+5. Build the outline from the source, not from model knowledge.
+6. Show the outline and wait for approval.
 
-## Jalur BRIEF: outline
+## BRIEF path: outline
 
-Outline wajib memuat:
+The outline must include:
 
-- judul kerja dan janji pembaca;
-- tujuan dan target pembaca;
-- gaya bahasa yang dikunci;
-- alasan pemilihan gaya dan tujuan;
-- ringkasan alur atau argumen;
-- daftar bab dengan tujuan, konflik/pertanyaan utama, isi, dan hasil bab;
-- daftar bahan yang belum tersedia;
-- rencana diagram Mermaid dan ilustrasi SVG;
-- risiko fakta, sensitivitas, dan batasan.
+- working title and reader promise;
+- project purpose and target audience;
+- locked writing style;
+- why the style and purpose fit the project;
+- story or argument summary;
+- chapter list with each chapter's goal, main question or conflict, contents, and reader outcome;
+- missing materials;
+- Mermaid and SVG plan;
+- factual, sensitivity, and scope risks.
 
-Jumlah bab harus antara 5 dan 15. Jika di luar rentang, minta pengguna memilih ulang.
+Chapter count must be between 5 and 15. Ask the user to choose again when it is outside this range.
 
-Format ringkas:
+Use this compact format:
 
 ```markdown
-# Outline E-Book
+# E-Book Outline
 
-## Kontrak proyek
-- Judul:
-- Jalur:
-- Tujuan:
-- Target pembaca:
-- Gaya:
-- Jumlah bab:
+## Project contract
+- Title:
+- Path:
+- Purpose:
+- Target audience:
+- Style:
+- Chapter count:
 
-## Daftar bab
-| Bab | Tujuan | Isi utama | Output pembaca | Visual |
+## Chapters
+| Chapter | Goal | Main content | Reader outcome | Visual |
 |---:|---|---|---|---|
 ```
 
-## Penulisan bab
+## Chapter drafting
 
-Saat pengguna memilih bab:
+When the user selects a chapter:
 
-1. nyatakan bab yang dikunci;
-2. gunakan hanya materi sumber atau detail brief;
-3. tulis pembuka yang langsung masuk ke masalah;
-4. kembangkan isi dengan subjudul yang fungsional;
-5. gunakan contoh hanya jika sumber memberi contoh atau contoh diberi label hipotetis;
-6. tambahkan `Mermaid` hanya untuk relasi, proses, timeline, atau struktur yang jelas;
-7. tambahkan SVG hanya untuk ilustrasi konseptual atau data yang tersedia;
-8. tutup dengan transisi atau pertanyaan yang relevan, bukan ringkasan otomatis;
-9. jalankan audit bab sebelum mengirim.
+1. State which chapter is locked.
+2. Use only source material, approved creative decisions, or brief content.
+3. Open directly with the chapter's problem, scene, question, or consequence.
+4. Use functional subheadings.
+5. Use examples only when supplied by the source or clearly labeled as hypothetical.
+6. Add Mermaid only for a clear process, relationship, timeline, decision, or structure.
+7. Add SVG only for a conceptual illustration or a visualization supported by available data.
+8. End with a useful transition or unresolved question, not an automatic summary.
+9. Run the chapter audit before delivery.
 
-Sesuaikan bab dengan tujuan:
+Adapt emphasis to the purpose:
 
-- **Dijual** — tekankan manfaat pembaca, positioning, struktur yang mudah dipindai, dan ajakan yang jujur.
-- **Lead magnet/bonus** — beri nilai praktis yang jelas, tetapi jangan menahan informasi penting secara manipulatif.
-- **Personal branding** — pertahankan sudut pandang, pengalaman, prinsip, dan batas klaim pemilik.
-- **Materi kelas** — gunakan tujuan belajar, urutan konsep, latihan, dan indikator pemahaman.
-- **Panduan internal tim** — gunakan prosedur, peran, keputusan, batasan, dan sumber kebenaran internal.
-- **Koleksi pribadi** — prioritaskan dokumentasi, konteks, suara pemilik, dan kelengkapan arsip.
+- **For sale** — emphasize reader benefit, positioning, scan-friendly structure, and honest calls to action.
+- **Lead magnet/bonus** — deliver clear practical value; never withhold essential information manipulatively.
+- **Personal branding** — preserve the owner's point of view, experience, principles, and claim boundaries.
+- **Course material** — use learning objectives, concept sequence, exercises, and understanding checks.
+- **Internal team guide** — use procedures, roles, decisions, boundaries, and internal sources of truth.
+- **Personal collection** — prioritize documentation, context, the owner's voice, and archival completeness.
 
-Tujuan hanya mengubah prioritas penyajian. Tujuan tidak boleh menambah bukti, testimoni, hasil, atau janji yang tidak tersedia.
+Purpose changes presentation priorities only. It never authorizes invented proof, testimonials, outcomes, or promises.
 
-Jangan memaksa semua bab memiliki panjang, jumlah subjudul, atau pola paragraf yang sama. Jangan menulis bab lain kecuali pengguna meminta.
+Do not force every chapter to have the same length, number of headings, paragraph count, or structure. Do not draft unrequested chapters.
 
-## Format visual
+## Visual format
 
-Mermaid harus berada dalam fenced code block:
+Put Mermaid in a fenced block:
 
 ````markdown
 ```mermaid
 flowchart TD
-    A[Input] --> B[Proses]
+    A[Input] --> B[Process]
     B --> C[Output]
 ```
 ````
 
-SVG harus berupa XML valid, mandiri, dan aman:
+SVG must be valid, standalone, and safe:
 
-- gunakan `viewBox`;
-- sertakan `role="img"` dan `<title>`;
-- gunakan teks Indonesia yang singkat;
-- jangan menyisipkan JavaScript, external resource, tracking, atau data yang tidak bersumber;
-- beri caption dan alt text;
-- jika data tidak cukup, buat ilustrasi konseptual dan sebutkan bahwa gambar bukan visualisasi data.
+- use a `viewBox`;
+- include `role="img"` and `<title>`;
+- use short Indonesian labels;
+- include no JavaScript, external resources, trackers, or unsupported data;
+- include alt text and a caption;
+- label conceptual illustrations as conceptual, not as data visualizations.
 
-## Kontrak output
+## Project output contract
 
-Untuk proyek lengkap, gunakan struktur:
+For a complete project, use:
 
 ```text
 ebook/
@@ -190,7 +209,7 @@ ebook/
 ├── evidence-map.md
 ├── outline.md
 ├── chapters/
-│   ├── 01-judul.md
+│   ├── 01-title.md
 │   └── ...
 ├── visuals/
 │   ├── diagrams.md
@@ -202,27 +221,26 @@ ebook/
     └── final-audit.md
 ```
 
-Jika pengguna hanya meminta outline atau satu bab, kirim bagian itu tanpa membuat artefak yang tidak diminta.
+If the user requests only an outline or one chapter, deliver only that scope.
 
-## Aturan keras
+## Hard rules
 
-- Bahasa keluaran default: Bahasa Indonesia.
-- Jangan mengarang fakta, sumber, kutipan, statistik, nama, tanggal, atau hasil riset.
-- Klaim sumber yang meragukan dipertahankan sebagai klaim sumber dan diberi flag.
-- Jangan menyamarkan ketidakpastian dengan gaya percaya diri.
-- Jangan membuat sitasi palsu atau daftar pustaka palsu.
-- Jangan memakai formula AI: pembuka generik, tiga poin wajib, simetri palsu, buzzword, ajakan kosong, atau kesimpulan yang mengulang.
-- Terapkan EYD 2022 dan KBBI sejauh dapat diverifikasi.
-- Pertahankan istilah teknis yang lazim; jangan membuat padanan istilah asing.
-- Untuk e-book akademik, gunakan klaim berbasis bukti, sitasi yang tersedia, hedging yang tepat, dan struktur argumentasi.
-- Jika instruksi pengguna bertentangan dengan bukti sumber, tandai konflik dan minta keputusan.
+- Default output language is Bahasa Indonesia.
+- Never invent facts, sources, quotations, statistics, names, dates, or research results.
+- Preserve suspicious source claims as source-relative claims and flag them.
+- Never hide uncertainty behind confident wording.
+- Never create fake citations, references, testimonials, or bibliographic metadata.
+- Remove generic openers, forced triads, false symmetry, buzzwords, empty calls to action, and repetitive conclusions.
+- Apply the local Indonesian writing protocol and preserve established technical terms.
+- For academic e-books, use evidence-led claims, available citations, calibrated modality, limitations, and explicit argument structure.
+- When user instructions conflict with source evidence, flag the conflict and request a decision.
 
-## Respons saat data kurang
+## Missing-data response
 
-Gunakan placeholder eksplisit:
+Use explicit placeholders:
 
-- `[DATA DIPERLUKAN: ...]`
-- `[SUMBER BELUM TERVERIFIKASI: ...]`
-- `[KEPUTUSAN PENGGUNA DIPERLUKAN: ...]`
+- `[DATA NEEDED: ...]`
+- `[SOURCE NOT VERIFIED: ...]`
+- `[USER DECISION NEEDED: ...]`
 
-Jangan mengisi placeholder dengan tebakan.
+Never replace a placeholder with a guess.
