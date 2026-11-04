@@ -73,7 +73,7 @@ If the user uses Indonesian labels, map them to the choices above. Do not introd
 1. Read this file.
 2. Read `references/workflow.md`.
 3. Read `protocols/anti-hallucination.md`, `protocols/anti-slop.md`, `protocols/citations.md`, `protocols/evaluation.md`, `protocols/guardrails.md`, `protocols/humanizer-id.md`, `protocols/paraphrase.md`, `protocols/patterns.md`, `protocols/indonesian-writing.md`, and `protocols/visuals.md`.
-4. Read `references/style-presets.md`.
+4. Read `references/style-presets.md` and `protocols/project-memory.md`.
 5. Read `references/ai-lexicon-id.md`, `references/citation-styles.md`, and `references/evaluation-rubric.md` when auditing, citing, or evaluating.
 6. For non-fiction or academic e-books, read `protocols/academic-mode.md`.
 7. Before delivery, read `checklists/final-audit.md`.
@@ -112,8 +112,9 @@ After conversion:
 2. Separate facts, opinions, quotations, instructions, data, and unreadable sections.
 3. Create `evidence-map.md` with provenance such as `file:heading` or `file:page`.
 4. Label claims `VERIFIED`, `SOURCE-RELATIVE`, `UNVERIFIED`, or `CONFLICT`.
-5. Build the outline from the source, not from model knowledge.
-6. Show the outline and wait for approval.
+5. Create or update `project-memory.md` with stable facts and evidence pointers.
+6. Build the outline from the source, not from model knowledge.
+7. Show the outline and wait for approval.
 
 ## BRIEF path: outline
 
@@ -153,15 +154,17 @@ Use this compact format:
 
 When the user selects a chapter:
 
-1. State which chapter is locked.
-2. Use only source material, approved creative decisions, or brief content.
-3. Open directly with the chapter's problem, scene, question, or consequence.
-4. Use functional subheadings.
-5. Use examples only when supplied by the source or clearly labeled as hypothetical.
-6. Add Mermaid only for a clear process, relationship, timeline, decision, or structure.
-7. Add SVG only for a conceptual illustration or a visualization supported by available data.
-8. End with a useful transition or unresolved question, not an automatic summary.
-9. Run the chapter audit before delivery.
+1. Read `project-memory.md`, the selected row in `chapter-ledger.md`, relevant `decision-log.md` entries, and only the required evidence pointers.
+2. State which chapter is locked.
+3. Use only source material, approved creative decisions, or brief content.
+4. Open directly with the chapter's problem, scene, question, or consequence.
+5. Use functional subheadings.
+6. Use examples only when supplied by the source or clearly labeled as hypothetical.
+7. Add Mermaid only for a clear process, relationship, timeline, decision, or structure.
+8. Add SVG only for a conceptual illustration or a visualization supported by available data.
+9. End with a useful transition or unresolved question, not an automatic summary.
+10. Run the chapter audit before delivery.
+11. Update `chapter-ledger.md`, `decision-log.md`, and `project-memory.md`.
 
 Adapt emphasis to the purpose:
 
@@ -207,6 +210,9 @@ ebook/
 ├── project-brief.md
 ├── source-manifest.md
 ├── evidence-map.md
+├── project-memory.md
+├── chapter-ledger.md
+├── decision-log.md
 ├── outline.md
 ├── chapters/
 │   ├── 01-title.md

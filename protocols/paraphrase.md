@@ -8,11 +8,11 @@ Goal: restate the source with **different wording and structure, identical meani
 
 A real paraphrase changes the **architecture** of the expression at four levels. Apply at least two levels per passage:
 
-| Level | Technique | Example (EN) | Contoh (ID) |
+| Level | Technique | Example (EN) | Indonesian example |
 |-------|-----------|--------------|-------------|
 | **Lexical** | Context-correct word replacement (not mechanical thesaurus) | "important" → "significant"/"consequential" depending on sense | "penting" → "krusial"/"menentukan"/"berdampak besar" |
 | **Syntactic** | Restructure the sentence | Active ↔ passive; cleft sentences; clause reordering; nominalization ↔ verbalization | "Penelitian ini membuktikan bahwa X" ↔ "X terbukti lewat penelitian ini" |
-| **Sentential** | Split long sentences / merge short ones; change sentence boundaries | One 40-word sentence → two sentences with different subjects | Satu kalimat panjang → dua kalimat dengan subjek berbeda |
+| **Sentential** | Split long sentences / merge short ones; change sentence boundaries | One 40-word sentence → two sentences with different subjects | One long sentence → two sentences with different subjects |
 | **Discourse** | Reorder paragraphs, change connectives, shift focus (topic-comment restructure) | "However, X" → "X, though, ..." / "Meskipun Y, X" → "X — meskipun Y" | Idem |
 
 ## 2. Mandatory constraints
@@ -44,7 +44,7 @@ When paraphrasing to avoid text-matching (common academic request):
 - **Citation duty stays with the author**: paraphrased ideas still need attribution. Add one neutral note when the source is academic and no citation is present: ideas from a source must be cited even when reworded. Never fabricate a citation to "complete" this.
 - Do not paraphrase beyond recognition *and* claim it as original thought — that is patchwriting's mirror image; the goal is honest restatement.
 
-## 6. ID-specific notes
+## 6. Indonesian-specific notes
 
 - Avoid the English calque reflex: "melakukan analisis terhadap" → "menganalisis"; "memberikan dampak yang signifikan terhadap" → "berdampak signifikan pada"; "memiliki kemampuan untuk" → "mampu".
 - Prefer strong Indonesian verbs over noun stacks: "melakukan pengamatan" → "mengamati"; "memberikan penjelasan" → "menjelaskan".

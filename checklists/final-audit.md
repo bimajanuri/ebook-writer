@@ -1,38 +1,46 @@
 # Final Audit
 
-## Kontrak
+## Contract
 
-- [ ] Jalur proyek benar.
-- [ ] Judul, tujuan, pembaca, gaya, dan jumlah bab konsisten.
-- [ ] Tujuan termasuk salah satu dari enam pilihan resmi.
-- [ ] Gaya termasuk `Edukatif`, `Santai`, atau `Formal`.
-- [ ] Outline disetujui sebelum bab ditulis.
+- [ ] Correct project path is used.
+- [ ] Title, purpose, audience, style, and chapter count are consistent.
+- [ ] Purpose is one of the six approved purposes.
+- [ ] Style is `Educational`, `Casual`, or `Formal`.
+- [ ] Outline was approved before drafting.
 
-## Bukti
+## Evidence
 
-- [ ] Tidak ada fakta, angka, nama, kutipan, atau sitasi baru.
-- [ ] Klaim sumber tidak hilang.
-- [ ] Ketidakpastian dan konflik diberi flag.
-- [ ] Placeholder dilaporkan.
+- [ ] No facts, numbers, names, quotations, or citations were added.
+- [ ] Source claims were not dropped.
+- [ ] Uncertainty and conflicts are flagged.
+- [ ] Placeholders are reported.
 
-## Bahasa
+## Language
 
-- [ ] Bahasa Indonesia konsisten.
-- [ ] EYD 2022/KBBI diperiksa.
-- [ ] Istilah teknis konsisten.
-- [ ] Tidak ada kalimat robotik, buzzword, atau pengulangan.
+- [ ] Generated content is in Bahasa Indonesia.
+- [ ] Indonesian spelling and terminology were checked.
+- [ ] Technical terms are consistent.
+- [ ] No robotic phrasing, buzzword clusters, or empty repetition remain.
 
-## Struktur
+## Structure
 
-- [ ] Setiap bab punya fungsi berbeda.
-- [ ] Heading informatif.
-- [ ] Transisi tidak generik.
-- [ ] Bab yang belum diminta tidak ditulis.
+- [ ] Each chapter has a distinct function.
+- [ ] Headings are informative.
+- [ ] Transitions are not generic.
+- [ ] Unrequested chapters were not drafted.
 
-## Visual
+## Visuals
 
-- [ ] Mermaid valid dan bersumber.
-- [ ] SVG valid, mandiri, aman, dan memiliki title/alt/caption.
+- [ ] Mermaid syntax is valid and source-grounded.
+- [ ] SVG is valid, standalone, safe, and has title, alt text, and caption.
+
+## Memory and token budget
+
+- [ ] Stable facts are stored once in `project-memory.md`.
+- [ ] Chapter status is stored in `chapter-ledger.md`.
+- [ ] Decisions and unresolved questions are stored in `decision-log.md`.
+- [ ] The next chapter used the memory records instead of repeating full context.
+- [ ] No full chapter or source file was duplicated in memory.
 
 ## Status
 
@@ -40,6 +48,7 @@
 claim_additions: 0
 claim_drops: 0
 unsupported_visual_claims: 0
+memory_repetition: 0
 writing_flags: N
 status: PASS | PASS_WITH_FLAGS | FAIL
 ```

@@ -1,34 +1,32 @@
-# Preset Gaya E-Book
+# E-Book Style Presets
 
-Pilih tepat satu gaya:
+Choose exactly one:
 
-| Gaya | Ciri | Hindari |
+| Style | Use | Avoid |
 |---|---|---|
-| Edukatif | Bertahap, jelas, konkret, membantu pembaca memahami dan menerapkan. | Penjelasan bertele-tele, jargon tanpa definisi, contoh tanpa fungsi. |
-| Santai | Natural, hangat, langsung, seperti penulis yang berbicara kepada pembaca. | Slang dipaksakan, emoji berlebihan, tata bahasa ceroboh. |
-| Formal | Baku, terstruktur, resmi, dan hemat basa-basi. | Birokratis, pasif tanpa aktor, pembuka dan penutup klise. |
+| Educational | Progressive, clear, concrete, and focused on understanding and application. | Long explanations, undefined jargon, and examples without a purpose. |
+| Casual | Natural, warm, direct, and conversational. | Forced slang, excessive emoji, and careless grammar. |
+| Formal | Standard, structured, official, and concise. | Bureaucratic padding, actorless passive voice, and cliché openings or closings. |
 
-Gaya mengubah cara penyampaian, bukan fakta, bukti, atau tingkat kepastian.
+Style changes delivery, not facts, evidence, or certainty.
 
-## Pemilihan gaya berdasarkan tujuan
+## Style by purpose
 
-- **Dijual**: `Santai` atau `Formal`, sesuai positioning produk.
-- **Lead magnet/bonus**: `Edukatif` atau `Santai`.
-- **Personal branding**: `Santai` atau `Formal`, sesuai suara pemilik.
-- **Materi kelas**: `Edukatif`.
-- **Panduan internal tim**: `Formal` atau `Edukatif`.
-- **Koleksi pribadi**: gaya yang paling dekat dengan suara pemilik.
+- **For sale**: `Casual` or `Formal`, based on product positioning.
+- **Lead magnet/bonus**: `Educational` or `Casual`.
+- **Personal branding**: `Casual` or `Formal`, based on the owner's voice.
+- **Course material**: `Educational`.
+- **Internal team guide**: `Formal` or `Educational`.
+- **Personal collection**: the style closest to the owner's voice.
 
-Jika pengguna tidak memilih gaya, tawarkan tiga pilihan ini. Jangan memakai preset lain.
+If the user has not selected a style, offer these three choices only.
 
-Untuk fiksi, kunci juga:
+For fiction, also lock:
 
-- sudut pandang;
-- kala penceritaan;
-- jarak narator;
-- ritme;
-- kepadatan dialog;
-- tingkat emosional;
-- batas konten.
-
-Jika gaya belum jelas, minta pengguna memilih maksimal tiga opsi yang paling cocok.
+- point of view;
+- narrative tense;
+- narrator distance;
+- pacing;
+- dialogue density;
+- emotional intensity;
+- content boundaries.

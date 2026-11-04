@@ -1,28 +1,30 @@
-# Penulisan Bahasa Indonesia
+# Indonesian Writing Protocol
 
-Gunakan EYD 2022 dan KBBI sejauh dapat diverifikasi. Periksa:
+Apply EYD 2022 and KBBI when verifiable. Check:
 
-- imbuhan dan kata depan `di`, `ke`, `dari`;
-- `di-` dan `ke-` sebagai imbuhan;
-- kapitalisasi nama diri;
-- tanda baca;
-- kata baku;
-- konsistensi istilah;
-- angka, satuan, dan persen;
-- kalimat aktif yang jelas;
-- subjek yang tidak hilang tanpa alasan.
+- affixes and prepositions such as `di`, `ke`, and `dari`;
+- `di-` and `ke-` as affixes;
+- proper-name capitalization;
+- punctuation;
+- standard word forms;
+- terminology consistency;
+- numbers, units, and percentages;
+- clear active sentences;
+- explicit subjects when needed.
 
-Pertahankan istilah teknis asing yang lazim. Jangan mengarang padanan. Bedakan koreksi wajib dari pilihan gaya.
+Keep established foreign technical terms. Do not invent Indonesian equivalents. Distinguish mandatory corrections from style preferences.
 
-Untuk narasi:
+For narrative writing:
 
-- jaga sudut pandang dan kala;
-- hindari penjelasan yang mengulang aksi;
-- bedakan suara narator dan dialog;
-- jangan membuat dialog semua tokoh terdengar sama.
+- preserve point of view and tense;
+- avoid explaining an action twice;
+- distinguish narrator voice from dialogue;
+- do not make every character sound identical.
 
-Untuk nonfiksi:
+For non-fiction:
 
-- klaim besar membutuhkan bukti atau batasan;
-- gunakan hedging bila sumber tidak pasti;
-- jangan menulis sitasi tanpa metadata.
+- support broad claims with evidence or limits;
+- use calibrated modality when the source is uncertain;
+- never create citations without metadata.
+
+The generated e-book remains in Bahasa Indonesia. This protocol is written in English for cross-model compatibility.

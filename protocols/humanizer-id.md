@@ -1,80 +1,87 @@
-# Protocol — Humanize, Bahasa Indonesia (HUM / id)
+# Humanize Protocol — Indonesian (HUM / id)
 
-Goal: menghapus jejak penulisan mesin agar teks terbaca sebagai tulisan manusia berbahasa Indonesia yang natural. Deteksi berbasis 26 pola AI dari blader/humanizer, lalu diperluas dengan pola khas teks AI berbahasa Indonesia. Lexicon lengkap: `references/ai-lexicon-id.md`.
+Goal: remove machine-like writing patterns while keeping Indonesian prose natural, accurate, and faithful to the source. Detection uses the 26 baseline AI patterns plus Indonesian-specific signals. The supporting lexicon is `references/ai-lexicon-id.md`.
 
-**Aturan metode**: setiap pola diperbaiki dengan *menuliskan ulang idenya*, bukan menukar satu kata baku dengan sinonim kamus. Menukar sinonim tanpa mengubah struktur kalimat justru meninggalkan kerangka mesin.
+## Method rule
 
----
+Rewrite the underlying idea. Do not merely replace one formal word with a dictionary synonym. Synonym swapping keeps the machine skeleton intact.
 
-## 1. Keluarga pola (deteksi → perbaiki)
+## Pattern families
 
-### A. Scaffolding esai & pembuka kosong (hapus saat ditemukan)
+### A. Empty openings and essay scaffolding
 
-1. **Pembuka klise dunia-akan** — "Dalam era globalisasi yang serba cepat ini...", "Seiring berkembangnya zaman...", "Di tengah pesatnya perkembangan teknologi..." → langsung ke pokok masalahnya.
-2. **"Tak dapat dipungkiri / Tidak dapat dipungkiri bahwa"** → hapus; buktikan klaimnya atau tulis langsung.
-3. **"Perlu diketahui / Perlu dicatat bahwa"** → hapus; jika memang perlu, letakkan faktnya.
-4. **Pembuka pengantar artikel** — "Artikel ini akan membahas/mengulas...", "Melalui artikel ini, kami akan..." → hapus atau ganti dengan hook faktual yang nyata (angka, kejadian, pertanyaan konkret).
-5. **Penutup klise** — "Semoga artikel ini bermanfaat", "Wallahu a'lam", "Demikian yang dapat kami sampaikan" (pada teks non-formal/akademik) → sesuaikan; penutup yang baik menyimpulkan temuan, bukan mendoakan pembaca.
-6. **Ajakan basa-basi** — "Yuk, simak artikel ini sampai habis!", "Jangan lewatkan pembahasannya!" → hapus.
+1. Cliché world-opening: replace phrases such as `Dalam era globalisasi yang serba cepat ini...` with the actual point.
+2. `Tak dapat dipungkiri` and `Tidak dapat dipungkiri bahwa`: remove them; state or support the claim directly.
+3. `Perlu diketahui` and `Perlu dicatat`: remove them unless the notice itself is necessary.
+4. Article-introduction filler such as `Artikel ini akan membahas...`: replace with a concrete problem, event, number, or question.
+5. Cliché closings such as `Semoga artikel ini bermanfaat`: replace with a useful conclusion or omit it.
+6. Empty invitations such as `Yuk, simak sampai habis!`: remove them.
 
-### B. Formalitas kaku & calque bahasa Inggris (perbaiki strukturnya)
+### B. Rigid formality and English calques
 
-7. **Calque sintaksis Inggris** — "Hal ini memainkan peran penting dalam..." (← plays a crucial role), "…dapat memberikan dampak yang signifikan terhadap...", "memiliki kemampuan untuk", "melakukan analisis terhadap", "secara komprehensif" → tulis dengan pola kalimat Indonesia: "Ini penting karena...", "…berdampak besar pada...", "mampu", "menganalisis", "menyeluruh/lengkap".
-8. **Verba lemah + nomina** — "melakukan pengamatan/pembahasan/penjelasan/penilaian" → "mengamati/membahas/menilai/menjelaskan".
-9. **Basa-basi struktural berlapis** — "Berdasarkan hal tersebut di atas, penulis bermaksud untuk melakukan..." → satu kalimat langsung.
-10. **Passive tanpa aktor yang berguna** — "Diharapkan agar para pihak..." → siapa yang diharapkan, melakukan apa?
+7. English-syntax calques such as `memainkan peran penting`, `memberikan dampak yang signifikan`, and `memiliki kemampuan untuk`: use natural Indonesian structures.
+8. Weak verb plus noun stacks: prefer direct verbs such as `menganalisis`, `mengamati`, `menilai`, and `menjelaskan`.
+9. Layered formal padding such as `Berdasarkan hal tersebut di atas...`: write one direct sentence.
+10. Passive voice without a useful actor: identify who acts and what they do.
 
-### C. Ritme & sintaksis (perbaiki saat kepadatan tinggi)
+### C. Rhythm and syntax
 
-11. **Triganda terpaksa** — "baik dari segi X, Y, maupun Z" di mana isinya tidak benar-benar tiga hal paralel → biarkan apa adanya atau potong.
-12. **Pembuka kalimat berulang** — beberapa kalimat berurutan dibuka "Dengan...", "Selain itu...", "Di sisi lain..." → variasikan: mulai dari subjek, dari keterangan, dari pertanyaan, gabung dua kalimat.
-13. **Konjungsi berlebihan** — "namun demikian", "akan tetapi", "oleh karena itu, hal tersebut" → satu konektor per perpindahan, tidak dua.
-14. **Panjang kalimat seragam** — semua kalimat 20–30 kata = ritme mesin. Campur kalimat pendek dan panjang secara disengaja.
-15. **Titik-titik dan tanda seru berlebihan** — "Nah, ...", "Yuk, ...", "Tentu saja!" → hematkan atau hapus.
+11. Do not force a three-part list when the items are not genuinely parallel.
+12. Vary repeated sentence openings such as `Dengan...`, `Selain itu...`, and `Di sisi lain...`.
+13. Use one connector per transition; avoid stacks such as `namun demikian` or `akan tetapi`.
+14. Mix sentence lengths deliberately.
+15. Reduce excessive ellipses, exclamation marks, and conversational filler.
 
-### D. Pembesaran & otoritas pinjaman
+### D. Inflated authority
 
-16. **Kata sinyal AI** — "sangat penting", "memainkan peran krusial", "lanskap", "revolusi digital", "solusi komprehensif", "inovatif", "terdepan", "berkelanjutan" (tanpa dimaknai), "paradigma", "sinergi", "memberdayakan", "memanfaatkan potensi" (see lexicon) → ganti dengan makna spesifiknya.
-17. **Pembesaran signifikansi** — "tidak dapat dilepaskan dari", "sangat fundamental", "berkontribusi secara besar terhadap" → sebesar apa, tepatnya?
-18. **Klaim tanpa mekanisme** — "berhubungan erat dengan", "mempengaruhi" → pengaruhnya lewat apa?
-19. **Otoritas tanpa sumber** — "para ahli sepakat", "sejarah membuktikan", "riset membuktikan" (tanpa rujukan) → sebut sumbernya, atau turunkan klaimnya jadi pendapat beralasan.
+16. Replace vague signals such as `sangat penting`, `revolusi`, `sinergi`, `komprehensif`, and `terdepan` with their concrete meaning.
+17. Remove unsupported significance inflation.
+18. Explain a mechanism when using a causal verb such as `mempengaruhi`.
+19. Name a source for claims such as `para ahli sepakat`; otherwise lower the claim to an attributed or reasoned opinion.
 
-### E. Pemberitahuan format & residu chat (hapus seluruhnya)
+### E. Formatting and chat residue
 
-20. **Bold dekoratif** — menekan frasa acak di tengah paragraf → bold hanya istilah/istilah kunci nyata.
-21. **Judul dekoratif & emoji berlebihan** — kecuali audiensnya memang santai.
-22. **Tanda kutip/garis baca mesin** — sumber teks AI yang ditempel mentah (mis. "AI", karakter aneh, format daftar berpoin yang tidak disesuaikan).
-23. **Residu chat** — "Tentu! Berikut adalah...", "Semoga membantu!", "Sebagai AI...", "Berikut versi yang sudah direvisi..." → hapus semua.
-24. **Meta-tentang naskah** — "Makalah ini terdiri dari tiga bagian yang akan membahas..." sebagai kalimat pertama paragraf → hapus atau ganti fakta substansial.
-25. **Judul diulang jadi kalimat pertama** → hapus pengulangan.
-26. **Menulis untuk pembaca yang keliru** — mengulang konteks yang sudah diketahui pembaca atau menunda keputusan sampai setelah diagnosis umum → mulai dari pokok, keputusan, atau konsekuensi yang dibutuhkan pembaca. Pertahankan konteks hanya jika konteks itu memengaruhi keputusan pembaca.
+20. Use bold only for real terms or headings, not decoration.
+21. Avoid decorative titles and excessive emoji unless the audience requires them.
+22. Normalize pasted AI formatting without changing content.
+23. Remove chat residue such as `Tentu! Berikut adalah...`, `Semoga membantu!`, and `Sebagai AI...`.
+24. Do not open a paragraph with meta-commentary about the document structure.
+25. Do not repeat the title as the first sentence.
+26. Write for the actual reader. Lead with the decision, subject, or consequence they need.
 
-## 2. Heuristik kepadatan (kapan suatu pola dihitung temuan)
+## Density heuristic
 
-- ≥2 kemunculan per halaman per pola → perbaiki semua.
-- ≥3 keluarga pola berbeda dalam satu paragraf → tulis ulang paragraf dari idenya, bukan dari kalimatnya.
-- Ragu? Baca luar: kalau terdengar seperti naskah presentasi korporat atau esai template kampus 2005, tulis ulang.
+- At least two occurrences of one pattern per page: fix all occurrences.
+- At least three pattern families in one paragraph: rewrite from the paragraph's idea.
+- If unsure, read aloud. If it sounds like a corporate presentation or a generic academic template, rewrite it.
 
-## 3. Yang TIDAK boleh "dihumanisasi"
+## Do not humanize away
 
-- Istilah teknis yang memang baku (nama metode, istilah hukum/medis/akademik) — presisi mengalahkan detektor.
-- Suara penulis yang disengaja: jika penulisnya memang formal baku (naskah akademik), jangan diselantingkan jadi kasual.
-- Kutipan, judul karya, nama orang/lembaga.
-- Jangan menyisipkan typo, singkatan "gaul", atau slang untuk memalsukan kesan manusia. Manusia ≠ belepotan; register harus tetap sesuai tujuan.
-- Jangan mengorbankan kaidah tata bahasa demi "kelihatan natural".
+- established technical, legal, medical, or academic terms;
+- deliberate formal voice;
+- quotations, titles, people, and institutions;
+- grammar or precision;
+- uncertainty and source attribution.
 
-## 4. Rekonstruksi suara (bila sumber tak punya suara)
+Do not add typos, forced slang, or casual abbreviations to imitate humans.
 
-Kalau teks AI datar tanpa persona yang terdeteksi, tetapkan satu sebelum menulis ulang:
-1. Tentukan pembaca tersirat (dosen, klien umum, pembaca blog) dan tujuan (menginformasikan, meyakinkan, mengajar).
-2. Pilih suara yang cocok: mis. "praktisi paham materi, langsung ke inti, formal-ringan, contoh konkret".
-3. Tulis ulang dengan suara itu secara konsisten — satu manusia yang konsisten mengalahkan tekstur acak.
-4. Sebutkan pilihan suara dalam satu baris di change log bila pengguna mungkin keberatan.
+## Voice reconstruction
 
-## 5. Pass verifikasi
+When the source has no clear voice:
 
-Setelah menulis ulang, pindai ULANG output dengan lexicon (`references/ai-lexicon-id.md`):
-- Kata tersisa yang terdeteksi harus bisa dipertahankan (istilah baku, kutipan, atau satu-satunya kata yang tepat).
-- Cek ritme: variasi panjang kalimat dan pembuka kalimat antar paragraf.
-- Cek pemicu format (bold, judul, tanda baca dekoratif) — ini paling sering lolos dari penyuntingan level kata.
-- Cek kecocokan pembaca: draf harus langsung menjawab kebutuhan pembaca tanpa mengulang konteks yang sudah tersedia dalam percakapan atau dokumen.
+1. identify the implied reader and purpose;
+2. choose one voice, such as an informed practitioner who is direct and concrete;
+3. apply it consistently;
+4. record the choice in the change log when it may matter to the user.
+
+## Verification pass
+
+After rewriting:
+
+- scan again with `references/ai-lexicon-id.md`;
+- keep any remaining signal only when it is precise, quoted, or necessary;
+- check sentence rhythm and paragraph openings;
+- check decorative formatting;
+- confirm that the draft answers the reader's need without repeating available context.
+
+The generated text remains in Bahasa Indonesia. This protocol is written in English for cross-model compatibility.

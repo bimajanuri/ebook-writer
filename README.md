@@ -53,6 +53,9 @@ Indonesian labels are accepted: `Edukatif`, `Santai`, `Formal`, `Dijual`, `Lead 
 ebook-writer/
 ├── SKILL.md
 ├── README.md
+├── project-memory.md
+├── chapter-ledger.md
+├── decision-log.md
 ├── scripts/
 │   └── convert_folder.py
 ├── protocols/
@@ -137,6 +140,16 @@ Upload the clean ZIP through the host's Skills interface, then enable the skill.
 6. Draft only the selected chapter.
 7. Add Mermaid or SVG only when supported by the source or brief.
 8. Run the final audit and report flags.
+
+## Token efficiency and project memory
+
+The skill uses three compact project records to avoid repeating the same context for every chapter:
+
+- `project-memory.md` stores stable facts, terminology, the project contract, and current state.
+- `chapter-ledger.md` stores one-line chapter status and open items.
+- `decision-log.md` stores decisions that affect later chapters.
+
+Before drafting a chapter, load these records and only the relevant evidence pointers. After drafting, update them. Never copy full chapters or source documents into the memory records.
 
 ## Validation
 

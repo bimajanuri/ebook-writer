@@ -1,26 +1,26 @@
-# Visual: Mermaid dan SVG
+# Visuals: Mermaid and SVG
 
 ## Mermaid
 
-Gunakan untuk alur, relasi, struktur, timeline, dan keputusan. Semua node harus dapat dijelaskan oleh sumber atau brief. Hindari diagram dekoratif.
+Use Mermaid for flows, relationships, structures, timelines, and decisions. Every node must be supported by the source or brief. Avoid decorative diagrams.
 
-Periksa:
+Check:
 
-- sintaks fenced block;
-- label terbaca;
-- arah panah tidak menyesatkan;
-- tidak ada node tanpa makna;
-- caption menjelaskan fungsi diagram.
+- fenced-block syntax;
+- readable labels;
+- non-misleading arrow direction;
+- no meaningless nodes;
+- a caption that explains the diagram's purpose.
 
 ## SVG
 
-Gunakan untuk ilustrasi konseptual, ikon, sampul sederhana, atau grafik yang datanya tersedia. SVG harus:
+Use SVG for conceptual illustrations, icons, simple covers, or charts supported by available data. SVG must:
 
-- XML valid;
-- memiliki `viewBox`;
-- memiliki `<title>` dan `role="img"`;
-- tidak memuat script, external URL, atau tracker;
-- memakai warna dan teks yang terbaca;
-- menyertakan alt text dan caption.
+- be valid XML;
+- include `viewBox`;
+- include `<title>` and `role="img"`;
+- contain no scripts, external URLs, or trackers;
+- use readable colors and text;
+- include alt text and a caption.
 
-Jangan menyebut ilustrasi konseptual sebagai grafik data. Jika gambar membutuhkan fakta visual yang belum tersedia, gunakan placeholder yang jelas.
+Do not describe a conceptual illustration as a data chart. If visual facts are unavailable, use an explicit placeholder.

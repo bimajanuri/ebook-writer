@@ -1,37 +1,39 @@
-# Workflow E-Book
+# E-Book Workflow
 
-## Tahap 0 — Kontrak
+## Stage 0 — Contract
 
-Kunci jalur, judul, premis atau folder sumber, tujuan, pembaca, gaya, jumlah bab, genre, format output, dan kebutuhan visual. Tujuan harus satu dari: `Dijual`, `Lead magnet/bonus`, `Personal branding`, `Materi kelas`, `Panduan internal tim`, atau `Koleksi pribadi`. Gaya harus satu dari: `Edukatif`, `Santai`, atau `Formal`. Catat asumsi. Jangan ubah asumsi diam-diam.
+Lock the path, title, premise or source folder, purpose, audience, style, chapter count, genre, output format, and visual needs. Purpose must be `For sale`, `Lead magnet/bonus`, `Personal branding`, `Course material`, `Internal team guide`, or `Personal collection`. Style must be `Educational`, `Casual`, or `Formal`. Record assumptions. Never change them silently.
 
-## Tahap 1 — Sumber
+## Stage 1 — Source
 
-Untuk MATERI, konversi file lalu buat manifest dan peta bukti. Untuk BRIEF, pisahkan fakta yang diberikan, keputusan kreatif yang diizinkan, dan detail yang belum ditentukan.
+For `SOURCE`, convert files and create the manifest and evidence map. For `BRIEF`, separate supplied facts, allowed creative decisions, and unresolved details.
 
-## Tahap 2 — Outline
+## Stage 2 — Outline
 
-Tulis outline 5–15 bab. Setiap bab harus punya fungsi berbeda. Tampilkan outline kepada pengguna. Tunggu persetujuan sebelum menulis.
+Create a 5-15 chapter outline. Each chapter must have a distinct function. Show the outline and wait for approval.
 
-## Tahap 3 — Draft
+## Stage 3 — Draft
 
-Tulis hanya bab yang dipilih. Simpan konsistensi istilah, karakter, waktu, sudut pandang, dan tingkat kepastian. Catat keputusan baru di `project-brief.md`.
+Write only the selected chapter. Keep terminology, characters, timeline, point of view, and certainty consistent. Record new decisions in the project memory files.
 
-## Tahap 4 — Visual
+## Stage 4 — Visuals
 
-Pilih visual yang membantu pemahaman. Mermaid untuk struktur atau proses. SVG untuk ilustrasi mandiri. Jangan mengubah data menjadi grafik tanpa data numerik.
+Choose visuals that improve understanding. Use Mermaid for structure or process. Use SVG for standalone illustrations. Never turn unsupported information into a data chart.
 
-## Tahap 5 — Audit
+## Stage 5 — Audit
 
-Jalankan audit anti-halusinasi, anti-slop, EYD, gaya, struktur, dan visual. Status akhir: `PASS`, `PASS_WITH_FLAGS`, atau `FAIL`.
+Run anti-hallucination, anti-slop, Indonesian writing, style, structure, visual, and memory audits. Status: `PASS`, `PASS_WITH_FLAGS`, or `FAIL`.
 
-## Tahap 6 — Revisi
+## Stage 6 — Revision
 
-Perbaiki hanya temuan yang disetujui atau jelas melanggar kontrak. Setelah revisi, ulangi audit terdampak.
+Fix only approved findings or clear contract violations. Re-run affected audits after revision.
 
-## Gaya dan tujuan
+## Stage 7 — Memory update
 
-Pilih satu gaya: `Edukatif`, `Santai`, atau `Formal`. Pilih satu tujuan: `Dijual`, `Lead magnet/bonus`, `Personal branding`, `Materi kelas`, `Panduan internal tim`, atau `Koleksi pribadi`.
+After each approved chapter, update only the compact memory records:
 
-Untuk fiksi, tambahkan kontrol `POV`, `tense`, `pacing`, dan `dialogue density`.
+- `project-memory.md` for stable facts and current project state;
+- `chapter-ledger.md` for chapter status and one-line summaries;
+- `decision-log.md` for decisions, assumptions, and unresolved questions.
 
-Gaya mengubah cara penyampaian, bukan fakta. `Confident` dan `Marketing` tidak mengizinkan klaim tanpa bukti.
+Do not copy full chapters into memory files.

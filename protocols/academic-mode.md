@@ -1,17 +1,17 @@
-# Mode Akademik
+# Academic Mode
 
-Gunakan mode ini untuk e-book edukasi, ilmiah, atau berbasis riset.
+Use this mode for educational, scientific, research-based, or evidence-heavy e-books.
 
-- rumuskan tujuan, ruang lingkup, dan istilah;
-- bedakan bukti primer, sekunder, dan klaim pengguna;
-- pertahankan provenance;
-- gunakan argumen dari bukti ke kesimpulan;
-- nyatakan keterbatasan;
-- jangan membuat DOI, jurnal, penulis, angka, atau kutipan;
-- gunakan sitasi hanya dari sumber yang tersedia atau terverifikasi;
-- hindari signifikansi palsu dan generalisasi di luar data.
+- define the purpose, scope, and key terms;
+- distinguish primary evidence, secondary evidence, and user claims;
+- preserve provenance;
+- reason from evidence to conclusion;
+- state limitations;
+- never invent DOIs, journals, authors, numbers, or quotations;
+- cite only supplied or verifiable sources;
+- avoid false significance and generalization beyond the evidence.
 
-Audit minimum:
+Minimum audit:
 
 ```text
 claims_source: N
