@@ -4,6 +4,8 @@
 
 - [ ] Jalur proyek benar.
 - [ ] Judul, tujuan, pembaca, gaya, dan jumlah bab konsisten.
+- [ ] Tujuan termasuk salah satu dari enam pilihan resmi.
+- [ ] Gaya termasuk `Edukatif`, `Santai`, atau `Formal`.
 - [ ] Outline disetujui sebelum bab ditulis.
 
 ## Bukti

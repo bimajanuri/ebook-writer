@@ -27,6 +27,15 @@ Minta:
 - jumlah bab, 5–15;
 - apakah gambar/diagram diperlukan.
 
+Tujuan e-book harus satu dari:
+
+1. `Dijual`
+2. `Lead magnet/bonus`
+3. `Personal branding`
+4. `Materi kelas`
+5. `Panduan internal tim`
+6. `Koleksi pribadi`
+
 Jika pengguna belum memberi jumlah bab, sarankan angka berdasarkan kepadatan materi, tetapi minta konfirmasi.
 
 ### Jalur BRIEF
@@ -42,16 +51,19 @@ Minta:
 - genre, jika relevan;
 - batasan konten, jika ada.
 
+Tujuan e-book harus satu dari enam pilihan yang ditetapkan pada jalur MATERI.
+
 Jangan menulis bab sebelum pengguna menyetujui outline. Pengguna boleh memilih bab mana yang dikerjakan lebih dulu.
 
 ## Load order
 
 1. Baca file ini.
 2. Baca `references/workflow.md`.
-3. Baca `protocols/anti-hallucination.md`, `protocols/anti-slop.md`, `protocols/indonesian-writing.md`, dan `protocols/visuals.md`.
+3. Baca `protocols/anti-hallucination.md`, `protocols/anti-slop.md`, `protocols/citations.md`, `protocols/evaluation.md`, `protocols/guardrails.md`, `protocols/humanizer-id.md`, `protocols/paraphrase.md`, `protocols/patterns.md`, `protocols/indonesian-writing.md`, dan `protocols/visuals.md`.
 4. Baca `references/style-presets.md` untuk memilih gaya.
-5. Untuk e-book nonfiksi atau akademik, baca `protocols/academic-mode.md`.
-6. Sebelum mengirim hasil, baca `checklists/final-audit.md`.
+5. Baca `references/ai-lexicon-id.md`, `references/citation-styles.md`, dan `references/evaluation-rubric.md` saat audit, sitasi, atau evaluasi diperlukan.
+6. Untuk e-book nonfiksi atau akademik, baca `protocols/academic-mode.md`.
+7. Sebelum mengirim hasil, baca `checklists/final-audit.md`.
 
 ## Jalur MATERI: konversi folder
 
@@ -91,6 +103,7 @@ Outline wajib memuat:
 - judul kerja dan janji pembaca;
 - tujuan dan target pembaca;
 - gaya bahasa yang dikunci;
+- alasan pemilihan gaya dan tujuan;
 - ringkasan alur atau argumen;
 - daftar bab dengan tujuan, konflik/pertanyaan utama, isi, dan hasil bab;
 - daftar bahan yang belum tersedia;
@@ -130,6 +143,17 @@ Saat pengguna memilih bab:
 7. tambahkan SVG hanya untuk ilustrasi konseptual atau data yang tersedia;
 8. tutup dengan transisi atau pertanyaan yang relevan, bukan ringkasan otomatis;
 9. jalankan audit bab sebelum mengirim.
+
+Sesuaikan bab dengan tujuan:
+
+- **Dijual** — tekankan manfaat pembaca, positioning, struktur yang mudah dipindai, dan ajakan yang jujur.
+- **Lead magnet/bonus** — beri nilai praktis yang jelas, tetapi jangan menahan informasi penting secara manipulatif.
+- **Personal branding** — pertahankan sudut pandang, pengalaman, prinsip, dan batas klaim pemilik.
+- **Materi kelas** — gunakan tujuan belajar, urutan konsep, latihan, dan indikator pemahaman.
+- **Panduan internal tim** — gunakan prosedur, peran, keputusan, batasan, dan sumber kebenaran internal.
+- **Koleksi pribadi** — prioritaskan dokumentasi, konteks, suara pemilik, dan kelengkapan arsip.
+
+Tujuan hanya mengubah prioritas penyajian. Tujuan tidak boleh menambah bukti, testimoni, hasil, atau janji yang tidak tersedia.
 
 Jangan memaksa semua bab memiliki panjang, jumlah subjudul, atau pola paragraf yang sama. Jangan menulis bab lain kecuali pengguna meminta.
 

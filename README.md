@@ -6,8 +6,8 @@ Skill Agent Skills portabel untuk membuat e-book Bahasa Indonesia.
 
 - `SKILL.md` — router dan aturan utama.
 - `scripts/convert_folder.py` — konversi folder lokal ke Markdown dengan Microsoft MarkItDown.
-- `references/` — alur proyek dan preset gaya.
-- `protocols/` — anti-halusinasi, anti-slop, penulisan Indonesia, akademik, dan visual.
+- `references/` — alur proyek, preset gaya, lexicon AI Bahasa Indonesia, sitasi, dan rubric evaluasi.
+- `protocols/` — anti-halusinasi, anti-slop, humanizer Bahasa Indonesia, paraphrase, patterns, guardrails, evaluasi, sitasi, penulisan Indonesia, akademik, dan visual.
 - `checklists/` — audit akhir.
 
 ## Instalasi lintas platform
@@ -44,3 +44,9 @@ python -m pip install 'markitdown[all]'
 ```
 
 Skill tetap dapat membuat e-book dari brief tanpa MarkItDown.
+
+## Pilihan proyek
+
+Gaya: `Edukatif`, `Santai`, atau `Formal`.
+
+Tujuan: `Dijual`, `Lead magnet/bonus`, `Personal branding`, `Materi kelas`, `Panduan internal tim`, atau `Koleksi pribadi`.

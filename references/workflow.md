@@ -2,7 +2,7 @@
 
 ## Tahap 0 — Kontrak
 
-Kunci jalur, judul, premis atau folder sumber, tujuan, pembaca, gaya, jumlah bab, genre, format output, dan kebutuhan visual. Catat asumsi. Jangan ubah asumsi diam-diam.
+Kunci jalur, judul, premis atau folder sumber, tujuan, pembaca, gaya, jumlah bab, genre, format output, dan kebutuhan visual. Tujuan harus satu dari: `Dijual`, `Lead magnet/bonus`, `Personal branding`, `Materi kelas`, `Panduan internal tim`, atau `Koleksi pribadi`. Gaya harus satu dari: `Edukatif`, `Santai`, atau `Formal`. Catat asumsi. Jangan ubah asumsi diam-diam.
 
 ## Tahap 1 — Sumber
 
@@ -28,8 +28,10 @@ Jalankan audit anti-halusinasi, anti-slop, EYD, gaya, struktur, dan visual. Stat
 
 Perbaiki hanya temuan yang disetujui atau jelas melanggar kontrak. Setelah revisi, ulangi audit terdampak.
 
-## Gaya
+## Gaya dan tujuan
 
-Pilihan: `Formal`, `Academic`, `Professional`, `Casual`, `Diplomatic`, `Educational`, `Simple`, `Confident`, `Marketing`. Untuk fiksi, tambahkan kontrol `POV`, `tense`, `pacing`, dan `dialogue density`.
+Pilih satu gaya: `Edukatif`, `Santai`, atau `Formal`. Pilih satu tujuan: `Dijual`, `Lead magnet/bonus`, `Personal branding`, `Materi kelas`, `Panduan internal tim`, atau `Koleksi pribadi`.
+
+Untuk fiksi, tambahkan kontrol `POV`, `tense`, `pacing`, dan `dialogue density`.
 
 Gaya mengubah cara penyampaian, bukan fakta. `Confident` dan `Marketing` tidak mengizinkan klaim tanpa bukti.
